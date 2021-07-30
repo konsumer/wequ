@@ -79,7 +79,7 @@ Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. 
 
 ## cli
 
-I love [jq](https://stedolan.github.io/jq/), but the syntax can be a little complicated to get what you need, especially with escaping and stuff. I made the wequ CLI to address this, so I don;t need to lookup syntax, I can just do what I do all over:
+I love [jq](https://stedolan.github.io/jq/), but the syntax can be a little complicated to get what you need, especially with escaping and stuff. I made the wequ CLI to address this, so I don't need to lookup syntax, I can just do what I do all over:
 
 ```sh
 cat file.json | wequ '{ title: "COOL" }'
