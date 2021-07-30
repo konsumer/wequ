@@ -3,13 +3,22 @@
   "version": "0.0.0",
   "description": "A logical-operator-style array-searching utility",
   "type": "module",
-  "keywords": ["search", "util", "logical", "query"],
+  "keywords": [
+    "search",
+    "util",
+    "logical",
+    "query"
+  ],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npx microbundle",
+    "build": "npx microbundle --raw",
     "prepublishOnly": "npm run build",
-    "test" : "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest"
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest",
+    "release": "npm run build && npx pkg --out-path=./dist --compress Brotli ./wequ.cjs"
+  },
+  "bin": {
+    "wequ": "./wequ.cjs"
   },
   "homepage": "https://github.com/konsumer/wequ#readme",
   "source": "./index.js",

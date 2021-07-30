@@ -24,7 +24,7 @@ const queryReadme = {
   }
 }
 
-describe('WeQu', () => {
+describe('README', () => {
   it('should be able to work with example in README', () => {
     const q = wequ(queryReadme)
 

@@ -18,14 +18,14 @@ It's not ready for use, yet. I am still working on it.
 - pre-compute queries-functions for slight speedup
 
 
-## usage
+## library
 
 The basic usage of wequ goes like this:
 
 ```js
 const q = wequ({
   published: true,
-  
+
   and: {
     category: 2
   },
@@ -60,5 +60,22 @@ const report = bigArrayOfObjects.every(q)
 const report = bigArrayOfObjects.some(q)
 ```
 
-These are served workds: `and`, `or`, `not`. Don't name your fields this.
+Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields.
 
+## cli
+
+It can also work as a CLI tool:
+
+```
+cat file.json | wequ '{ title: "COOL" }'
+```
+
+THe syntax is javascript, in a string.
+
+### installation
+
+Install the CLI tool a few ways:
+
+- Grab a ready-built CLI tool form [the releases](https://github.com/konsumer/wequ/releases). No node or other dev-tools needed.
+- Install globally with `npm i -g wequ` and it will be in your path
+- Use npx for 0-install: `npx wequ`
