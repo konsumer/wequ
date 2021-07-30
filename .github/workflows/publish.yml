@@ -22,7 +22,7 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files: |
-            dist/wequ-linux
-            dist/wequ-macos
-            dist/wequ-win.exe
+          files:
+            - dist/wequ-linux
+            - dist/wequ-macos
+            - dist/wequ-win.exe
