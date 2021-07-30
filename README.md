@@ -79,13 +79,42 @@ Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. 
 
 ## cli
 
-It can also work as a CLI tool:
+I love [jq](https://stedolan.github.io/jq/), but the syntax can be a little complicated to get what you need, especially with escaping and stuff. I made the wequ CLI to address this, so I don;t need to lookup syntax, I can just do what I do all over:
 
-```
+```sh
 cat file.json | wequ '{ title: "COOL" }'
 ```
 
-The syntax is javascript, in a string. stdin data should be JSON.
+or
+
+```sh
+wequ '{ title: "COOL" }' < file.json
+```
+
+The syntax is regular javascript, in a string. `stdin` data should be a JSON array of objects, so you might still need [jq](https://stedolan.github.io/jq/) to turn it into that.
+
+
+If you do want to get super-jiggy with it, but just like js syntax better than jq:
+
+```sh
+wequ '{ [ (new Date()).getMonth() + 1 ]: "COOL" }' < file.json
+```
+
+to find an object with the current month-number as a key, set to `"COOL"`.
+
+or the other way:
+
+```sh
+wequ '{ month: (new Date()).getMonth() + 1 }' < file.json
+```
+
+to find records with `month` set to the current month-number.
+
+
+You can `require` any installed npm-module (in node_modules in current directory) and do whatever nutso thing you want, in there.
+
+> Remember it's building a query-object, so dynamic field-names need to be in square-brackets
+
 
 ### installation
 

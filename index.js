@@ -16,9 +16,9 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
     if (k.length) {
       const inside = k.map(key => {
         if (Array.isArray(queries[i][key])) {
-          return queries[i][key].map(val => ` r.${key} ${op} ${JSON.stringify(val)} `).join(` ${join} `)
+          return queries[i][key].map(val => ` r[${JSON.stringify(key)}] ${op} ${JSON.stringify(val)} `).join(` ${join} `)
         } else {
-          return `r.${key} ${op} ${JSON.stringify(queries[i][key])}`
+          return `r[${JSON.stringify(key)}] ${op} ${JSON.stringify(queries[i][key])}`
         }
       })
       return `( ${inside.join(` ${join} `)} )`

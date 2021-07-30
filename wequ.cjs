@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { wequ } = require('./dist/wequ.cjs')
+const { wequ, describe } = require('./dist/wequ.cjs')
 
 const { stdin, stdout, argv, exit } = process
 
@@ -10,6 +10,8 @@ if (argv.length < 3) {
 }
 
 const query = (new Function('', 'return ' + argv.slice(2).join(' ')))()
+
+console.log(describe((new Function('', 'return ' + argv.slice(2).join(' ')))()))
 
 let inputChunks = Buffer.from([])
 
