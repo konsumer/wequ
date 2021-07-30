@@ -6,7 +6,7 @@
 
 A logical-operator-style array-searching utility.
 
-Short for "want everything query". Pronounced like "we koo".
+Short for "We Query". Pronounced like "we koo".
 
 
 ## features
