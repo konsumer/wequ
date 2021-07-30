@@ -23,9 +23,7 @@ describe('WeQu', () => {
       }
     })
 
-    const results = mock.filter(q)
-
-    console.log(results.length)
+    // TODO: currently returning no results
 
     // category should be 2
     expect(results.filter(r => r.category !== 2).length).toBe(0)
