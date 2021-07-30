@@ -1,4 +1,6 @@
-[{"id":1,"catgory":1,"published":false,"preview":true,"title":"Decentralized secondary initiative records","stupid":false},
+[
+{"id":0,"category":2,"published":true,"preview":true,"title":"Made to Match","stupid":false},
+{"id":1,"catgory":1,"published":false,"preview":true,"title":"Decentralized secondary initiative records","stupid":false},
 {"id":2,"catgory":2,"published":true,"preview":false,"title":"Configurable asymmetric alliance","stupid":true},
 {"id":3,"catgory":3,"published":false,"preview":false,"title":"Quality-focused systemic flexibility","stupid":true},
 {"id":4,"catgory":4,"published":true,"preview":true,"title":"Mandatory incremental matrix","stupid":false},
@@ -997,4 +999,5 @@
 {"id":997,"catgory":997,"published":false,"preview":false,"title":"Up-sized value-added core","stupid":false},
 {"id":998,"catgory":998,"published":false,"preview":false,"title":"Mandatory regional flexibility","stupid":true},
 {"id":999,"catgory":999,"published":true,"preview":false,"title":"Phased eco-centric Graphic Interface","stupid":true},
-{"id":1000,"catgory":1000,"published":true,"preview":false,"title":"Persistent even-keeled pricing structure","stupid":false}]
+{"id":1000,"catgory":1000,"published":true,"preview":false,"title":"Persistent even-keeled pricing structure","stupid":false}
+]

@@ -8,17 +8,13 @@ A logical-operator-style array-searching utility.
 
 Short for "want everything query". Pronounced like "we koo".
 
-# WIP
-
-It's not ready for use, yet. I am still working on it.
-
 
 ## features
 
-- It's stupid-fast
-- It's stupid-simple
-- pre-compute queries-functions for slight speedup
-
+- It's stupid-fast - it turns a nice query object into a function that performs series of logical comparisons (the fastest way to match a query)
+- It's stupid-simple - I mean I think it's easier to follow than regular filter functions, especially if they are complicated
+- pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
+- It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, easily
 
 ## library
 
