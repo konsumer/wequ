@@ -1,4 +1,4 @@
-on: tag
+on: push
 
 jobs:
   publish:
