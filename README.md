@@ -1,10 +1,10 @@
 # wequ
 
+<img src="./logo.jpg" alt="now we cool bro (picture of dog with sunglasses)" align="right" />
+
 A logical-operator-style array-searching utility.
 
 Short for "want everything query". Pronounced like "we koo".
-
-<img src="./logo.jpg" alt="now we cool bro (picture of dog with sunglasses)" align="right" />
 
 # WIP
 
