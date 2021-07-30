@@ -7,12 +7,13 @@
     "search",
     "util",
     "logical",
-    "query"
+    "query",
+    "array"
   ],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npx microbundle --raw",
+    "build": "npx microbundle",
     "prepublishOnly": "npm run build",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest",
     "release": "npm run build && npx pkg --public --out-path=./dist ./wequ.cjs"
