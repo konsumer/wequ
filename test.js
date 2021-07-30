@@ -33,7 +33,7 @@ describe('README', () => {
     // I created 1 record that will match
     expect(results.length).toBe(1)
 
-    // a lot of dopuble-negatives below, but basically I filter the results looking for the opposite of each clause, then check the length
+    // a lot of dopuble-negatives below, but basically I filter the results looking for the opposite of each clause, then check the length, which should be 0
 
     // category should be 2
     expect(results.filter(r => r.category !== 2).length).toBe(0)
