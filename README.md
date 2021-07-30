@@ -16,6 +16,7 @@ Short for "We Query". Pronounced like "we koo".
 - it's tiny - `641B` gzipped, for web-build, and under 600B for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
 - pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
 - It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, more easily
+- even people who hate javascript or just aren't javascript programmers can use it daily, via an easy CLI util.
 
 
 ## library
@@ -161,3 +162,13 @@ import { wequ, describe } from 'wequ'
 import { wequ, describe } from 'https://unpkg.com/wequ@latest/dist/wequ.module.js'
 ```
 
+
+## development
+
+This is mostly just notes for myself.
+
+To release, just tag with a version and push, and [CI](https://github.com/konsumer/wequ/blob/main/.github/workflows/publish.yml) will do the rest.
+
+```sh
+npm version path && git push --mirror
+```
