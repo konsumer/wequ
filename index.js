@@ -10,7 +10,7 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
     return 'true'
   }
 
-  const fn = keys.map((k, i) => {
+  return keys.map((k, i) => {
     const join = joins[i]
     const op = i > 1 ? '!==' : '==='
     if (k.length) {
@@ -28,8 +28,6 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
   })
     .filter(f => f)
     .join(' && ')
-
-  return fn
 }
 
 // this returns a filter function for the query
