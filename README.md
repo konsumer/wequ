@@ -1,6 +1,6 @@
 # wequ
 
-<img src="./logo.jpg" alt="now we cool bro (picture of dog with sunglasses)" align="right" />
+<img src="https://github.com/konsumer/wequ/raw/main/logo.jpg" alt="now we cool bro (picture of dog with sunglasses)" align="right" />
 
 [![npm version](https://badge.fury.io/js/wequ.svg)](https://badge.fury.io/js/wequ)
 
