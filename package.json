@@ -27,6 +27,7 @@
   "module": "./dist/wequ.module.js",
   "unpkg": "./dist/wequ.umd.js",
   "files": [
+    "./wequ.cjs",
     "./index.js",
     "dist/wequ.cjs",
     "dist/wequ.cjs.map",
