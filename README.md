@@ -23,21 +23,17 @@ It's not ready for use, yet. I am still working on it.
 The basic usage of wequ goes like this:
 
 ```js
-// category should be 2 and published should be true
-// in addition to and clause, it should also preview should be false
-// instead of and/nand/nor clause, id could be 1 or 2 or 3
-// instead of and/nand/or clause, title could not be those titles or stupid could be false to trigger a match
-// pre-compute your query-function as q for a tiny speedup, when used in multiple places
 const q = wequ({
+  published: true,
+  
   and: {
-    category: 2,
-    published: true
+    category: 2
   },
-
+  
   nand: {
     preview: false
   },
-  
+
   or: {
     id: [1, 2, 3]
   },
@@ -64,5 +60,5 @@ const report = bigArrayOfObjects.every(q)
 const report = bigArrayOfObjects.some(q)
 ```
 
-
+These are served workds: `and`, `or`, `not`. Don't name your fields this.
 
