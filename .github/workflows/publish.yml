@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm test && npm run build && npm run release
+      - run: npm test
+      - run: npm run build
+      - run: npm run release
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
@@ -22,7 +24,7 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files:
-            - dist/wequ-linux
-            - dist/wequ-macos
-            - dist/wequ-win.exe
+          files: |
+            dist/wequ-linux
+            dist/wequ-macos
+            dist/wequ-win.exe
