@@ -19,9 +19,6 @@ jobs:
       - run: npm run build
       - run: npm run release
       
-      - name: Generate Changelog
-        run: npx generate-changelog -u https://github.com/konsumer/wequ
-      
       - name: Publish on NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -51,9 +48,8 @@ jobs:
           directory: dist
           path: wequ-linux
 
-      - name: Put releases on releases page
+      - name: Publish Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*.zip"
-          bodyFile: "CHANGELOG.md"
           token: ${{ secrets.GITHUB_TOKEN }}
