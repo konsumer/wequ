@@ -4,9 +4,11 @@ A logical-operator-style array-searching utility.
 
 Short for "want everything query". Pronounced like "we koo".
 
+<img src="./logo.jpg" alt="now we cool bro (picture of dog with sunglasses)" align="right" />
+
 # WIP
 
-It's not ready for use, yet. I am stull working on it.
+It's not ready for use, yet. I am still working on it.
 
 
 ## features
