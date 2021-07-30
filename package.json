@@ -14,9 +14,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npx microbundle",
-    "prepublishOnly": "npm run build",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest",
-    "release": "npm run build && npx pkg --public --out-path=./dist ./wequ.cjs"
+    "release": "npx pkg --public --out-path=./dist ./wequ.cjs"
   },
   "bin": {
     "wequ": "./wequ.cjs"

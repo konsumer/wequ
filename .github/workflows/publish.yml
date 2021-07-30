@@ -1,7 +1,11 @@
-on: push
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
   publish:
+    name: Publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -9,6 +13,18 @@ jobs:
         with:
           node-version: 16
       - run: npm test
+      - run: npm run build
+      - run: npm run release
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            dist/wequ-linux
+            dist/wequ-macos
+            dist/wequ-win.exe
