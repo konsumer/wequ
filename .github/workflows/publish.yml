@@ -1,7 +1,7 @@
-on:
+on: 
   push:
-    branches:
-      - "main"
+    tags:
+    - '*'
 
 jobs:
   publish:
@@ -47,3 +47,10 @@ jobs:
           filename: 'wequ-linux-i64.zip'
           directory: dist
           path: wequ-linux
+
+      - name: Put releases on releases page
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.tar.gz,foo/*.txt"
+          bodyFile: "body.md"
+          token: ${{ secrets.GITHUB_TOKEN }}
