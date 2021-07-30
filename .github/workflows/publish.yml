@@ -14,9 +14,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-        run: npm test
-        run: npm run build
-        run: npm run release
+      - run: npm test
+      - run: npm run build
+      - run: npm run release
       
       - name: Publish on NPM
         uses: JS-DevTools/npm-publish@v1
