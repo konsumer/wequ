@@ -72,7 +72,7 @@ It can also work as a CLI tool:
 cat file.json | wequ '{ title: "COOL" }'
 ```
 
-THe syntax is javascript, in a string.
+The syntax is javascript, in a string. stdin data should be JSON.
 
 ### installation
 
