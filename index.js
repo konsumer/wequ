@@ -7,7 +7,7 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
 
   // no query? just return a function that returns true
   if (!totalLength) {
-    return () => true
+    return 'true'
   }
 
   const fn = keys.map((k, i) => {
