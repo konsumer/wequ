@@ -9,22 +9,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      
+      - name: Test & Build
+        uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm test
-      - run: npm run build
-      - run: npm run release
-      - uses: JS-DevTools/npm-publish@v1
+        run: npm test
+        run: npm run build
+        run: npm run release
+      
+      - name: Publish on NPM
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      
+      - name: Release Windows
+        uses: actions/checkout@master
+        uses: thedoctor0/zip-release@master
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            dist/wequ-linux
-            dist/wequ-macos
-            dist/wequ-win.exe
+          type: 'zip'
+          filename: 'wequ-windows.zip'
+          directory: dist
+          path: wequ-win.exe
+      
+      - name: Release Mac (intel 64)
+        uses: actions/checkout@master
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          filename: 'wequ-macos-i64.zip'
+          directory: dist
+          path: wequ-macos
+      
+      - name: Release Linux (intel 64)
+        uses: actions/checkout@master
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          filename: 'wequ-linux-i64.zip'
+          directory: dist
+          path: wequ-linux
