@@ -199,5 +199,5 @@ This is mostly just notes for myself.
 To release, just tag with a version and push, and [CI](https://github.com/konsumer/wequ/blob/main/.github/workflows/publish.yml) will do the rest.
 
 ```sh
-npm version path && git push --mirror
+npm version patch && git push --mirror
 ```
