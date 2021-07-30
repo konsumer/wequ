@@ -16,7 +16,9 @@ Short for "We Query". Pronounced like "we koo".
 - it's tiny - `641B` gzipped, for web-build, and under 600B for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
 - pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
 - It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, more easily
-- even people who hate javascript or just aren't javascript programmers can use it daily, via an easy CLI util.
+- use it in an easy-to-install CLI util
+- use it direclty in the browser, if you want
+- use it in nodejs
 
 
 ## library
@@ -53,7 +55,7 @@ console.log(describe(query))
 // pre-compute the query-function for use in other things
 const q = wequ(query)
 
-// honestly, this is pretty similar to describe(), but with a more laid-back ES5 chillwave vibe:
+// honestly, this is pretty similar to describe(), but with a more laid-back ES5 chillwave type of vibe:
 console.log(q.toString())
 
 // get all the items that match the query
@@ -74,8 +76,7 @@ const report = bigArrayOfObjects.some(q)
 
 Generally, I find it most useful to `a.filter(q)` for "get all matches" and `a.find(q)` for "get first match"
 
-Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields.
-
+Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields, which is my most common use-case.
 
 ## cli
 
