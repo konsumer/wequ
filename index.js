@@ -30,8 +30,9 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
     .join(' && ')
 }
 
-// this returns a filter function for the query
-export const wequ = (query = {}) => Function('r', 'return ' + fnBody(query))
+// I mean to eval, it's ok sometimes.
+// eslint-disable-next-line no-new-func
+export const wequ = (query = {}) => new Function('r', 'return ' + fnBody(query))
 
 // this returns an ES6 syntax function, as a string, so you can troubleshoot
 export const describe = (query = {}) => `r => ${fnBody(query)}`
