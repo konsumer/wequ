@@ -1,0 +1,31 @@
+{
+  "name": "wequ",
+  "version": "0.0.0",
+  "description": "A logical-operator-style array-searching utility",
+  "type": "module",
+  "keywords": ["search", "util", "logical", "query"],
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx microbundle",
+    "prepublishOnly": "npm run build",
+    "test" : "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest"
+  },
+  "homepage": "https://github.com/konsumer/wequ#readme",
+  "source": "./index.js",
+  "exports": "./dist/wequ.modern.js",
+  "main": "./dist/wequ.cjs",
+  "module": "./dist/wequ.module.js",
+  "unpkg": "./dist/wequ.umd.js",
+  "files": [
+    "./index.js",
+    "dist/wequ.cjs",
+    "dist/wequ.cjs.map",
+    "dist/wequ.modern.js",
+    "dist/wequ.modern.js.map",
+    "dist/wequ.module.js",
+    "dist/wequ.module.js.map",
+    "dist/wequ.umd.js",
+    "dist/wequ.umd.js.map"
+  ]
+}
