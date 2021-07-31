@@ -13,7 +13,7 @@ Short for "We Query". Pronounced like "we koo".
 
 - It's stupid-fast - it turns a nice query object into a function that performs series of logical comparisons (the fastest way to match a query)
 - It's stupid-simple - I mean I think it's easier to follow than regular filter functions, especially if they are complicated
-- it's tiny - `641B` gzipped, for web-build, and under 600B for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
+- it's tiny - `641B` gzipped, for web-build, and under `600B` for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
 - pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
 - It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, more easily
 - use it in an easy-to-install CLI util (no nodejs needed)
