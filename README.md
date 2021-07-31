@@ -16,7 +16,7 @@ Short for "We Query". Pronounced like "we koo".
 - it's tiny - `641B` gzipped, for web-build, and under 600B for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
 - pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
 - It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, more easily
-- use it in an easy-to-install CLI util
+- use it in an easy-to-install CLI util (no nodejs needed)
 - use it direclty in the browser, if you want
 - use it in nodejs
 
@@ -78,7 +78,9 @@ Generally, I find it most useful to `a.filter(q)` for "get all matches" and `a.f
 
 Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields, which is my most common use-case.
 
-Using `describe` you will disciover the function it generates is like this:
+It might take a second to get used to it, but each keyword is about what to do with the children like "if it's this or that or that" or "if this field is this and this other field is this". `nand` and `nor` are the same but "not matches" so `nor` is "this is not this or this other thing is not this" `nand` is "this is not this and this other thing is not this".
+
+Using `describe` you will discover the function thequery above generates is like this:
 
 ```js
 r => (
