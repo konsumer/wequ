@@ -21,13 +21,13 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
           return `r[${JSON.stringify(key)}] ${op} ${JSON.stringify(queries[i][key])}`
         }
       })
-      return `( ${inside.join(` ${join} `)} )`
+      return `  ( ${inside.join(` ${join} `)} )`
     } else {
       return false
     }
   })
     .filter(f => f)
-    .join(' && ')
+    .join('\n  && ')
 }
 
 // I mean to eval, it's ok sometimes.
@@ -35,4 +35,4 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
 export const wequ = (query = {}) => new Function('r', 'return ' + fnBody(query))
 
 // this returns an ES6 syntax function, as a string, so you can troubleshoot
-export const describe = (query = {}) => `r => ${fnBody(query)}`
+export const describe = (query = {}) => `r => (\n     ${fnBody(query)}\n)`

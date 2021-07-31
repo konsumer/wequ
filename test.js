@@ -24,6 +24,14 @@ const queryReadme = {
   }
 }
 
+// this is what the function looks like
+const description = `r => (
+       ( r["category"] === 2 && r["published"] === true )
+  &&   ( r["id"] === 0 || r["id"] === 1 || r["id"] === 2 || r["id"] === 3 )
+  &&   ( r["title"] !== "Bad" || r["title"] !== "No" || r["stupid"] !== true )
+  &&   ( r["preview"] !== false )
+)`
+
 describe('README', () => {
   it('should be able to work with example in README', () => {
     const q = wequ(queryReadme)
@@ -52,6 +60,6 @@ describe('README', () => {
   })
 
   it('should be able to describe the query in the README', () => {
-    expect(wdescribe(queryReadme)).toBe('r => ( r["category"] === 2 && r["published"] === true ) && ( r["id"] === 0 || r["id"] === 1 || r["id"] === 2 || r["id"] === 3 ) && ( r["title"] !== "Bad" || r["title"] !== "No" || r["stupid"] !== true ) && ( r["preview"] !== false )')
+    expect(wdescribe(queryReadme)).toBe(description)
   })
 })
