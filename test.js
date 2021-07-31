@@ -26,10 +26,10 @@ const queryReadme = {
 
 // this is what the function looks like
 const description = `r => (
-       ( r["category"] === 2 && r["published"] === true )
-  &&   ( r["id"] === 0 || r["id"] === 1 || r["id"] === 2 || r["id"] === 3 )
-  &&   ( r["title"] !== "Bad" || r["title"] !== "No" || r["stupid"] !== true )
-  &&   ( r["preview"] !== false )
+     ( r["category"] === 2 && r["published"] === true )
+  && ( r["id"] === 0 || r["id"] === 1 || r["id"] === 2 || r["id"] === 3 )
+  && ( r["title"] !== "Bad" || r["title"] !== "No" || r["stupid"] !== true )
+  && ( r["preview"] !== false )
 )`
 
 describe('README', () => {

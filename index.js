@@ -21,7 +21,7 @@ export const fnBody = ({ and = {}, or = {}, nor = {}, nand = {}, ...restAnd }) =
           return `r[${JSON.stringify(key)}] ${op} ${JSON.stringify(queries[i][key])}`
         }
       })
-      return `  ( ${inside.join(` ${join} `)} )`
+      return `( ${inside.join(` ${join} `)} )`
     } else {
       return false
     }

@@ -34,17 +34,17 @@ const query = {
   and: {
     category: 2
   },
-  
+
   nand: {
     preview: false
   },
 
   or: {
-    id: [1, 2, 3]
+    id: [0, 1, 2, 3]
   },
 
   nor: {
-    title: ["Decentralized secondary initiative", "Configurable asymmetric alliance"],
+    title: ['Bad', 'No'],
     stupid: true
   }
 }
@@ -77,6 +77,19 @@ const report = bigArrayOfObjects.some(q)
 Generally, I find it most useful to `a.filter(q)` for "get all matches" and `a.find(q)` for "get first match"
 
 Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields, which is my most common use-case.
+
+Using `describe` you will disciover the function it generates is like this:
+
+```js
+r => (
+     ( r["category"] === 2 && r["published"] === true )
+  && ( r["id"] === 0 || r["id"] === 1 || r["id"] === 2 || r["id"] === 3 )
+  && ( r["title"] !== "Bad" || r["title"] !== "No" || r["stupid"] !== true )
+  && ( r["preview"] !== false )
+)
+```
+
+This is maybe a bit harder to read & maintain.
 
 ## cli
 
