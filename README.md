@@ -16,7 +16,7 @@ Short for "We Query". Pronounced like "we koo".
 - it's tiny - `641B` gzipped, for web-build, and under `600B` for the 2 different node-side versions (commonjs and mjs.) That is nutso. I got dog-pictures bigger than that (the one on this page is almost 100X bigger.)
 - pre-compute queries-functions for slight speedup (especially if you run it in multiple places)
 - It has a `describe` function that outputs the string of an ES6 function, so you can see how it works, more easily
-- use it in an easy-to-install CLI util (no nodejs needed)
+- use it in an easy-to-install CLI util (no nodejs needed) that is streaming (any length is cool in a unix-pipe!)
 - use it direclty in the browser, if you want
 - use it in nodejs
 
