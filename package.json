@@ -1,6 +1,6 @@
 {
   "name": "wequ",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A logical-operator-style array-searching utility",
   "type": "module",
   "keywords": [
