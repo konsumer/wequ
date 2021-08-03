@@ -19,12 +19,12 @@ const query = wequ((new Function('', 'return ' + argv.slice(2).join(' ')))())
 let first = true
 
 const out = value => {
-  const str = indentString(JSON.stringify(value, null, 2), 2)
+  const str = indentString('\n' + JSON.stringify(value, null, 2), 2)
   if (first) {
-    stdout.write('[\n  ' + str.trim())
+    stdout.write('[\n' + str)
     first = false
   } else {
-    stdout.write(',' + str.trim())
+    stdout.write(',' + str)
   }
 }
 
