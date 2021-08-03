@@ -183,7 +183,7 @@ These are pretty new features, but if you want them in your old-browser-supporti
 
 ### node
 
-Intall it in your project:
+Install it in your project:
 
 ```sh
 npm i wequ
@@ -195,7 +195,7 @@ It works with older commonjs style:
 const { wequ, describe } = require('wequ')
 ```
 
-or ES6 module:
+or ES6 module (`type: module` or some sort of builder):
 
 ```js
 import { wequ, describe } from 'wequ'
