@@ -131,6 +131,12 @@ You can `require` any installed npm-module (in node_modules in current directory
 
 > Remember it's building a query-object, so dynamic field-names need to be in square-brackets
 
+While we are talking about cool javascript CLI tools for finding what you need, I recommend [flat](https://www.npmjs.com/package/flat). It's extremely useful for flattening complex objects (in a way that can be unflattened easily) and search for stuff. It pairs very nicely with wequ:
+
+```sh
+cat foo.json | flat | wequ '{ "deep.nested.object.is.no.problem.now": true }'
+```
+
 
 ### installation
 
