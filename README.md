@@ -78,7 +78,7 @@ Generally, I find it most useful to `a.filter(q)` for "get all matches" and `a.f
 
 Any fields other than `and|or|nor|nand` in the top-level are merged into `and`. This allows for quick `and` queries for a few fields, which is my most common use-case.
 
-It might take a second to get used to it, but each keyword is about what to do with the children like "if it's this or that or that" or "if this field is this and this other field is this". `nand` and `nor` are the same but "not matches" so `nor` is "this is not this or this other thing is not this" `nand` is "this is not this and this other thing is not this".
+It might take a second to get used to it, but each keyword is about the relationship with the fields have to each other, like "if it's this or that or that" or "if this field is this and this other field is this". `nand` and `nor` are the same but "not matches" so `nor` is "this is not this or this other thing is not this" `nand` is "this is not this and this other thing is not this".
 
 Using `describe` you will discover the function the query above generates is like this:
 
