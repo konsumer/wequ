@@ -1,32 +1,34 @@
 #!/usr/bin/env node
 
 const { wequ } = require('./dist/wequ.cjs')
+const StreamArray = require('stream-json/streamers/StreamArray')
 
-const { stdin, argv, exit } = process
-
-// wrapper that will output JSON or colored depending on how it's being piped
-const json = process.stdout.isTTY ? s => console.dir(s, { depth: null, colors: true, maxArrayLength: null, maxStringLength: null }) : s => console.log(JSON.stringify(s, null, 2))
+const { stdin, stdout, argv, exit } = process
 
 if (argv.length < 3) {
   console.error('Usage: cat FILE.json | wequ \'{ your: "query" }\'')
   exit(1)
 }
 
+const indentString = str => str.split('\n').map(l => `  ${l}`).join('\n')
+
 // I mean to eval, it's ok sometimes.
 // eslint-disable-next-line no-new-func
-const query = (new Function('', 'return ' + argv.slice(2).join(' ')))()
+const query = wequ((new Function('', 'return ' + argv.slice(2).join(' ')))())
 
-let inputChunks = Buffer.from([])
+let first = true
 
-stdin.resume()
-stdin.setEncoding('utf8')
+const out = value => {
+  const str = indentString(JSON.stringify(value, null, 2), 2)
+  if (first) {
+    stdout.write('[\n  ' + str.trim())
+    first = false
+  } else {
+    stdout.write(',' + str.trim())
+  }
+}
 
-stdin.on('data', chunk => {
-  inputChunks = Buffer.concat([inputChunks, Buffer.from(chunk)])
-})
-
-stdin.on('end', chunk => {
-  const q = wequ(query)
-  const d = JSON.parse(inputChunks.toString('utf8'))
-  json(d.filter(q))
-})
+stdin
+  .pipe(StreamArray.withParser())
+  .on('data', data => query(data.value) && out(data.value))
+  .on('end', () => console.log(first ? '[]' : '\n]'))
