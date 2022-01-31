@@ -18,17 +18,16 @@
     "release": "npx pkg --public --out-path=./dist ./wequ.cjs"
   },
   "bin": {
-    "wequ": "./wequ.cjs"
+    "wequ": "wequ.cjs"
   },
   "homepage": "https://github.com/konsumer/wequ#readme",
-  "source": "./index.js",
-  "exports": "./dist/wequ.modern.js",
-  "main": "./dist/wequ.cjs",
-  "module": "./dist/wequ.module.js",
-  "unpkg": "./dist/wequ.umd.js",
+  "source": "index.js",
+  "exports": "dist/wequ.modern.js",
+  "main": "dist/wequ.cjs",
+  "module": "dist/wequ.module.js",
+  "unpkg": "dist/wequ.umd.js",
   "files": [
-    "./wequ.cjs",
-    "./index.js",
+    "wequ.cjs",
     "dist/wequ.cjs",
     "dist/wequ.cjs.map",
     "dist/wequ.modern.js",
