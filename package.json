@@ -21,11 +21,11 @@
     "wequ": "wequ.cjs"
   },
   "homepage": "https://github.com/konsumer/wequ#readme",
-  "source": "index.js",
-  "exports": "dist/wequ.modern.js",
-  "main": "dist/wequ.cjs",
-  "module": "dist/wequ.module.js",
-  "unpkg": "dist/wequ.umd.js",
+  "source": "./index.js",
+  "exports": "./dist/wequ.modern.js",
+  "main": "./dist/wequ.cjs",
+  "module": "./dist/wequ.module.js",
+  "unpkg": "./dist/wequ.umd.js",
   "files": [
     "wequ.cjs",
     "dist/wequ.cjs",
